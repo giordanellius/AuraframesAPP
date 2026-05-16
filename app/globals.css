@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --burgundy: #8B2635;
+  --burgundy-dark: #6B1E2A;
+  --burgundy-light: #A53344;
+}
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#8B2635] hover:bg-[#6B1E2A] text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-all duration-200 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 px-6 rounded-lg shadow-sm transition-all duration-200 active:scale-95;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#8B2635] focus:outline-none focus:ring-2 focus:ring-[#8B2635]/20 transition-colors text-base;
+  }
+
+  .radio-option {
+    @apply flex items-center justify-center px-2 py-3 border-2 border-gray-300 rounded-lg cursor-pointer transition-all duration-200 hover:border-[#8B2635] hover:bg-[#8B2635]/5 text-center text-sm leading-tight break-words overflow-hidden min-h-[48px];
+    word-break: break-word;
+  }
+
+  .radio-option.active {
+    @apply border-[#8B2635] bg-[#8B2635] text-white font-semibold;
+  }
+
+  .output-card {
+    @apply bg-white rounded-lg p-4 shadow-sm border border-gray-200;
+  }
+
+  .section-card {
+    @apply bg-white rounded-xl p-6 shadow-md border border-gray-100;
+  }
+
+  .tab-button {
+    @apply flex-1 py-3 px-1 sm:px-4 font-semibold text-center transition-all duration-200 border-b-4 text-xs sm:text-sm flex flex-col sm:flex-row items-center justify-center gap-1;
+    min-height: 56px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .tab-button.active {
+    @apply border-[#8B2635] text-[#8B2635];
+  }
+
+  .tab-button:not(.active) {
+    @apply border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300;
+  }
+}
+
+/* Hide hydration errors */
+[data-hydration-error] {
+  display: none !important;
+}
